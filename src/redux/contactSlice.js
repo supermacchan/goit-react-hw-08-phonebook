@@ -5,6 +5,7 @@ import { fetchContacts, addContact, deleteContact } from "./operations";
 
 const handlePending = state => {
   state.isLoading = true;
+  state.error = null;
 };
 
 const handleRejected = (state, action) => {
