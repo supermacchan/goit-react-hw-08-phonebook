@@ -63,7 +63,7 @@
 }
 
 .phonebook__button:hover {
-    background-color: rgba(197, 234, 255, 0.9);
-    color: #001ead;
+    background-color: #000f58;
+    color: rgb(13, 186, 255);
     box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
 }
