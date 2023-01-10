@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addContact } from "redux/operations";
+import { BsPersonCircle, BsFillTelephoneFill } from "react-icons/bs";
 import css from './ContactForm.module.css';
 
 export const ContactForm = () => {
@@ -46,7 +47,7 @@ export const ContactForm = () => {
                     htmlFor="nameInputId"
                     className={css.phonebook__label}
                 >
-                    Name
+                    <BsPersonCircle className={css.icon} /> Name
                 </label>
                 <input
                     type="text"
@@ -63,7 +64,7 @@ export const ContactForm = () => {
                     htmlFor="telInputId"
                     className={css.phonebook__label}
                 >
-                    Number
+                    <BsFillTelephoneFill className={css.icon} /> Number
                 </label>
                 < input
                     type="tel"
