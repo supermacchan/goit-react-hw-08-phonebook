@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addContact } from "redux/contactSlice";
+import { addContact } from "redux/operations";
 import css from './ContactForm.module.css';
 
-export const ContactForm = ({ onSubmit }) => {
+export const ContactForm = () => {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
     const dispatch = useDispatch();
@@ -24,7 +24,11 @@ export const ContactForm = ({ onSubmit }) => {
 
     const handleFormSubmit = event => {
         event.preventDefault();
-        dispatch(addContact(name, number));
+        const newContact = {
+            name,
+            number
+        };
+        dispatch(addContact(newContact));
         reset();
     }
 

@@ -6,3 +6,9 @@
     font-size: 20px;
     color: rgb(78, 41, 20);
 }
+
+.error {
+    margin-left: 20px;
+    font-size: 40px;
+    color: rgb(78, 41, 20);
+}

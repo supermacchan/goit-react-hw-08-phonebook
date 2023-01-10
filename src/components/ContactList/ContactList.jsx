@@ -1,18 +1,24 @@
+import { Loader } from "components/Loader/Loader";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteContact } from "redux/contactSlice";
-import { getContacts, getFilter } from "redux/selectors";
+import { deleteContact, fetchContacts } from "redux/operations";
+import { selectContacts, selectFilter } from "redux/selectors";
 
 import css from './ContactList.module.css';
 
 import { ContactListItem } from "./ContactListItem";
 
 export const ContactList = () => {
-    const contacts = useSelector(getContacts);
-    const filter = useSelector(getFilter);
+    const { items, isLoading, error } = useSelector(selectContacts);
+    const filter = useSelector(selectFilter);
     const dispatch = useDispatch();
 
     const normalizedFilter = filter.toLowerCase();
-    const filteredContacts = contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter));
+    const filteredContacts = items.filter(contact => contact.name.toLowerCase().includes(normalizedFilter));
+
+    useEffect(() => {
+        dispatch(fetchContacts());
+    }, [dispatch]);
 
     const deletingContact = id => {
         dispatch(deleteContact(id));
@@ -20,7 +26,10 @@ export const ContactList = () => {
 
     return (
         <ul className={css.contacts__list}>
-            {filteredContacts.map(contact =>
+            {isLoading && <Loader />}
+            {error && <div className={css.error}>{error}</div>}
+            {filteredContacts.length > 0 &&
+                filteredContacts.map(contact =>
                 <ContactListItem
                     contact={contact}
                     onDeleteContact={deletingContact}
