@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 // import { nanoid } from "nanoid";
 import { toast } from 'react-toastify';
-import { fetchContacts } from "./operations";
+import { fetchContacts, addContact, deleteContact } from "./operations";
 
 const handlePending = state => {
   state.isLoading = true;
