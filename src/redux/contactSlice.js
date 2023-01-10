@@ -38,7 +38,7 @@ const contactSlice = createSlice({
         toast.error(`${action.payload.name} is already in contacts.`);
         return;
       }
-      state.items.unshift(action.payload);
+      state.items.push(action.payload);
     },
     [addContact.rejected]: handleRejected,
 
