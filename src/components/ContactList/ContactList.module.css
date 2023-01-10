@@ -8,6 +8,8 @@
 }
 
 .error {
+    margin-bottom: 20px;
     font-size: 40px;
+    font-weight: 500;
     color: rgb(78, 41, 20);
 }
