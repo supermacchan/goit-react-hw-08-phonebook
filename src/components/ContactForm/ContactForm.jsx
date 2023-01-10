@@ -26,7 +26,7 @@ export const ContactForm = () => {
         event.preventDefault();
         const newContact = {
             name,
-            number
+            number,
         };
         dispatch(addContact(newContact));
         reset();

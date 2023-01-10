@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { nanoid } from "nanoid";
 import { toast } from 'react-toastify';
 import { fetchContacts, addContact, deleteContact } from "./operations";
 
@@ -20,32 +19,6 @@ const contactSlice = createSlice({
     isLoading: false,
     error: null
   },
-
-  // reducers: {
-  //   addContact: {
-  //     reducer(state, action) {
-  //       const contactsNames = state.items.map(contact => contact.name);
-  //       if(contactsNames.includes(action.payload.name)) {
-  //         toast.error(`${action.payload.name} is already in contacts.`);
-  //         return;
-  //       }
-  //       state.items.unshift(action.payload);
-  //     },
-  //     prepare(name, number) {
-  //       return {
-  //         payload: {
-  //           id: nanoid(),
-  //           name,
-  //           number,
-  //         },
-  //       };
-  //     },
-  //   },
-  //   deleteContact(state, action) {
-  //     const index = state.items.findIndex(contact => contact.id === action.payload);
-  //     state.items.splice(index, 1);
-  //   },
-  // },
 
   extraReducers: {
     [fetchContacts.pending]: handlePending,
@@ -80,5 +53,4 @@ const contactSlice = createSlice({
   }
 });
 
-// export const { addContact, deleteContact } = contactSlice.actions;
 export const contactsReducer = contactSlice.reducer;

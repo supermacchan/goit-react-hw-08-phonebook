@@ -1,13 +1,13 @@
 .phonebook__title {
-    margin-left: 20px;
+    text-align: center;
     font-size: 35px;
-    color: rgb(78, 41, 20);
-    text-shadow: 2px 2px 2px rgb(255, 203, 173);;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px rgb(51, 24, 124);
 }
 
 .contacts__title {
-    margin-left: 20px;
+    text-align: center;
     font-size: 30px;
-    color: rgb(78, 41, 20);
-    text-shadow: 2px 2px 2px rgb(255, 203, 173);;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px rgb(51, 24, 124);
 }
