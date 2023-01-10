@@ -34,3 +34,12 @@ const contactSlice = createSlice({
 
 export const { addContact, deleteContact } = contactSlice.actions;
 export const contactsReducer = contactSlice.reducer;
+
+// {
+//   contacts: {
+//     items: [],
+//     isLoading: false,
+//     error: null
+//   },
+//   filter: ""
+// }
