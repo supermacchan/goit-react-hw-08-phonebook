@@ -8,6 +8,9 @@
     border: 0.3px solid rgba(1, 10, 64, 0.58);
     border-radius: 3px;
     background-color: rgb(220, 242, 255);
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(1, 10, 64, 0.58);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(1, 10, 64, 0.58);
+    box-shadow: 0px 2px 4px 0px rgba(1, 10, 64, 0.58);
     font-size: 18px;
 }
 
