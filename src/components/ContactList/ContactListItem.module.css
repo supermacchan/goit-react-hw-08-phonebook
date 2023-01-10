@@ -12,7 +12,7 @@
 .contacts__delBtn {
     width: 100px;
     padding: 5px 10px;
-    background-color: rgb(78, 41, 20);
+    background-color: #001ead;
     color: white;
     border: none;
     border-radius: 15px;
@@ -25,7 +25,7 @@
 
 
 .contacts__delBtn:hover {
-    background-color: rgb(253, 232, 212);
-    color: rgb(78, 41, 20);
-    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.4);
+    background-color: rgba(197, 234, 255, 0.9);
+    color: #001ead;
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
 }

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteContact, fetchContacts } from "redux/operations";
 import { selectContacts, selectFilter } from "redux/selectors";
+import { MdOutlineError } from "react-icons/md";
 
 import css from './ContactList.module.css';
 
@@ -27,7 +28,7 @@ export const ContactList = () => {
     return (
         <ul className={css.contacts__list}>
             {isLoading && <Loader />}
-            {error && <div className={css.error}>{error}</div>}
+            {error && <div className={css.error}><MdOutlineError className={css.error_icon} /> {error}</div>}
             {filteredContacts.length > 0 &&
                 filteredContacts.map(contact =>
                 <ContactListItem
