@@ -1,0 +1,8 @@
+.contacts__list {
+    max-width: 420px;
+    margin-left: 20px;
+    padding: 0;
+    list-style: inside;
+    font-size: 20px;
+    color: rgb(78, 41, 20);
+}

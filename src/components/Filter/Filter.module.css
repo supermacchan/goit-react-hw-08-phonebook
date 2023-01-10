@@ -1,0 +1,14 @@
+.filterInput {
+    width: 275px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 4px;
+    border: 0.3px solid rgb(78, 41, 20);
+    border-radius: 3px;
+    background-color: rgb(255, 244, 234);
+    font-size: 18px;
+}
+
+.filterInput:focus {
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.4);
+}
