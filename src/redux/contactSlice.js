@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { toast } from 'react-toastify';
 import { fetchContacts, addContact, deleteContact } from "./operations";
 
 const handlePending = state => {
@@ -33,11 +32,6 @@ const contactSlice = createSlice({
     [addContact.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      const contactsNames = state.items.map(contact => contact.name);
-      if(contactsNames.includes(action.payload.name)) {
-        toast.error(`${action.payload.name} is already in contacts.`);
-        return;
-      }
       state.items.push(action.payload);
     },
     [addContact.rejected]: handleRejected,

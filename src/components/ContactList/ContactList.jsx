@@ -1,7 +1,7 @@
 import { Loader } from "components/Loader/Loader";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteContact, fetchContacts } from "redux/operations";
+import { fetchContacts } from "redux/operations";
 import { selectContacts, selectFilter } from "redux/selectors";
 import { MdOutlineError } from "react-icons/md";
 
@@ -21,10 +21,6 @@ export const ContactList = () => {
         dispatch(fetchContacts());
     }, [dispatch]);
 
-    const deletingContact = id => {
-        dispatch(deleteContact(id));
-    }
-
     return (
         <ul className={css.contacts__list}>
             {isLoading && <Loader />}
@@ -33,7 +29,6 @@ export const ContactList = () => {
                 filteredContacts.map(contact =>
                 <ContactListItem
                     contact={contact}
-                    onDeleteContact={deletingContact}
                     key={contact.id}
                 />
             )}

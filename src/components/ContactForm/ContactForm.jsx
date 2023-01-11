@@ -1,12 +1,16 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "redux/operations";
 import { BsPersonCircle, BsFillTelephoneFill } from "react-icons/bs";
+import { toast } from 'react-toastify';
 import css from './ContactForm.module.css';
+import { selectContacts } from "redux/selectors";
 
 export const ContactForm = () => {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
+    const { items } = useSelector(selectContacts);
+    const contactsNames = items.map(contact => contact.name);
     const dispatch = useDispatch();
 
     const handleInputChange = event => {
@@ -29,7 +33,13 @@ export const ContactForm = () => {
             name,
             number,
         };
-        dispatch(addContact(newContact));
+        
+        if(contactsNames.includes(name)) {
+            toast.error(`${name} is already in contacts.`);
+            return;
+        } else {
+            dispatch(addContact(newContact));
+        }
         reset();
     }
 
