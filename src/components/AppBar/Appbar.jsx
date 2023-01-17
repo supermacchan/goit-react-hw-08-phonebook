@@ -13,6 +13,9 @@ export const AppBar = () => {
                 <NavLink to={"/contacts"} className={css.header__link}>
                     Contacts
                 </NavLink>
+                <NavLink to={"/register"} className={css.header__link}>
+                    Register
+                </NavLink>
             </nav>
         </header>
     );

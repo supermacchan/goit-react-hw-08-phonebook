@@ -8,6 +8,7 @@ import { Layout } from './Layout';
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const Contacts = lazy(() => import('../pages/Contacts/Contacts'));
+const Register = lazy(() => import('../pages/Register/Register'));
 
 export const App = () => {
   return (
@@ -15,7 +16,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-            <Route path='/register' element={<Contacts />} />
+            <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Contacts />} />
             <Route path='/contacts' element={<Contacts />} />
           </Route>
