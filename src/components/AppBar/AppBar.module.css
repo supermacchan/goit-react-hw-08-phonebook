@@ -4,7 +4,7 @@
     -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.57);
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.57);
 
-    background-color: rgb(196, 245, 200);
+    background-color: var(--background-white);
 }
 
 .header__nav {
@@ -28,9 +28,9 @@
 
 .header__link.active,
 .header__link:focus {
-    color: green;
+    color: var(--active-blue);
 }
 
 .header__link:hover {
-    color: rgb(1, 82, 1);
+    color: var(--main-blue);
 }

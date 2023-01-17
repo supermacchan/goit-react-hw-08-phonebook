@@ -20,3 +20,11 @@ code {
     monospace;
 }
 
+:root {
+  --background-white: #fff;
+  --main-blue: #001ead;
+  --active-blue: #000f58;
+  --main-text-color: rgb(17, 5, 71);
+  --active-button-text-color: rgb(13, 186, 255);
+}
+
