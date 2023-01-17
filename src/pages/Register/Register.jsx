@@ -6,17 +6,15 @@ const Register = () => {
             <h2 className={css.title}>Fill out the following form</h2>
             <form className={css.registrationForm}>
                 <label
-                    htmlFor="loginInputId"
+                    htmlFor="nameInputId"
                     className={css.label}
                 >
-                    Login
+                    Name
                 </label>
                 <input
                     type="text"
-                    name="login"
-                    pattern="[A-Za-z0-9]"
-                    title="Login may contain letters and numbers"
-                    id="loginInputId"
+                    name="name"
+                    id="nameInputId"
                     required
                     className={css.input}
                 />
@@ -28,10 +26,8 @@ const Register = () => {
                     Email
                 </label>
                 <input
-                    type="text"
+                    type="email"
                     name="email"
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                    title="Please enter a valid email address"
                     id="emailInputId"
                     required
                     className={css.input}
@@ -46,13 +42,15 @@ const Register = () => {
                 <input
                     type="text"
                     name="email"
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                    // title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                     id="passwordInputId"
                     required
                     className={css.input}
                 />
+                <button type='submit' className={css.submitBtn}>Register</button>
             </form>
+            
         </>
     )
 };
