@@ -37,6 +37,26 @@
 .listItem {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
+}
+
+.label {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.input {
+    width: 285px;
+    margin-bottom: 15px;
+    padding: 4px;
+    border: 0.3px solid rgba(1, 10, 64, 0.58);
+    border-radius: 3px;
+    background-color: rgba(197, 234, 255, 0.418);
+    font-size: 18px;
+}
+
+.input:focus {
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 .submitBtn {
