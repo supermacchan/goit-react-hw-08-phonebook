@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "redux/operations";
+import { selectContacts } from "redux/selectors";
 import { BsPersonCircle, BsFillTelephoneFill } from "react-icons/bs";
 import { toast } from 'react-toastify';
 import css from './ContactForm.module.css';
-import { selectContacts } from "redux/selectors";
 
 export const ContactForm = () => {
     const [name, setName] = useState('');
