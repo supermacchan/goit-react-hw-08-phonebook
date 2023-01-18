@@ -9,6 +9,7 @@ export const Navigation = () => {
                 <BsFillJournalBookmarkFill className={css.header__icon} />
                 Home
             </NavLink>
+            {/* добавить условия отображения контактов (при логине) */}
             <NavLink to={"/contacts"} className={css.header__link}>
                 Contacts
             </NavLink>    

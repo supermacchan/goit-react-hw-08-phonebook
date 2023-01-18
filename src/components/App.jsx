@@ -20,6 +20,7 @@ export const App = () => {
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<LogIn />} />
             <Route path='/contacts' element={<Contacts />} />
+            {/* добавить 404 */}
           </Route>
       </Routes>
 
