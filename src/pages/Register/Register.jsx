@@ -42,7 +42,7 @@ const Register = () => {
 
     return (
         <section className={css.registration}>
-            <h2 className={css.title}>Fill out the following form</h2>
+            <h2 className={css.title}>Fill out the following form to register</h2>
             <form className={css.registrationForm} onSubmit={handleSubmit}>
                 <ul className={css.list}>
                     <li className={css.listItem}>
