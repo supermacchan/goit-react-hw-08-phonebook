@@ -41,7 +41,7 @@ const LogIn = () => {
                         />
                     </li>
                 </ul>
-                <button type='submit' className={css.logInBtn}>Sign In</button>
+                <button type='submit' className={css.submitBtn}>Sign In</button>
             </form>
         </section>
     )
