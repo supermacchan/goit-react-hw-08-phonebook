@@ -1,6 +1,6 @@
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { authOperations } from 'redux/auth/authOperations';
+import { useDispatch } from 'react-redux';
+import { authOperations } from 'redux/auth/authOperations';
 
 import { BsFillPersonFill } from 'react-icons/bs';
 import { HiOutlineMail } from 'react-icons/hi';
@@ -9,7 +9,7 @@ import { RiLockPasswordLine } from 'react-icons/ri';
 import css from './Register.module.css';
 
 const Register = () => {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -28,11 +28,22 @@ const Register = () => {
         }
     };
     
+    const handleSubmit = event => {
+        event.preventDefault();
+        dispatch(authOperations.register({ name, email, password }));
+        reset();
+    }
+
+    const reset = () => {
+        setName('');
+        setEmail('');
+        setPassword('');
+    };
 
     return (
         <section className={css.registration}>
             <h2 className={css.title}>Fill out the following form</h2>
-            <form className={css.registrationForm}>
+            <form className={css.registrationForm} onSubmit={handleSubmit}>
                 <ul className={css.list}>
                     <li className={css.listItem}>
                         <label
