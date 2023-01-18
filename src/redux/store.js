@@ -1,6 +1,7 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { contactsReducer } from "./contactSlice";
 import { filtersReducer } from "./filterSlice";
+import { authReducer } from "./auth/authSlice";
 import storage from 'redux-persist/lib/storage';
 import {
     persistStore,
@@ -14,22 +15,21 @@ import {
   } from 'redux-persist';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
-const persistConfig = {
-    key: 'root',
+const authPersistConfig = {
+    key: 'auth',
     storage,
-    blacklist: ['filter'],
+    blacklist: ['token'],
     stateReconciler: autoMergeLevel2,
 };
 
-const rootReducer = combineReducers({
-    contacts: contactsReducer,
-    filter: filtersReducer,
-});
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const authPersistedReducer = persistReducer(authPersistConfig, authReducer);
 
 export const store = configureStore({
-    reducer: persistedReducer,
+    reducer: {
+        contacts: contactsReducer,
+        filter: filtersReducer,
+        auth: authPersistedReducer,
+    },
     middleware: getDefaultMiddleware => 
         getDefaultMiddleware({
             serializableCheck: {
