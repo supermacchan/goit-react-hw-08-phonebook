@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
 import { Navigation } from "components/Navigation/Navigation";
+import { AuthNav } from "components/AuthNav/AuthNav";
 import css from "./AppBar.module.css";
 
 export const AppBar = () => {
@@ -7,12 +7,7 @@ export const AppBar = () => {
         <header className={css.header}>
             <nav className={css.header__nav}>
                 <Navigation />
-                <NavLink to={"/register"} className={css.header__link}>
-                    Register
-                </NavLink>
-                <NavLink to={"/login"} className={css.header__link}>
-                    Log In
-                </NavLink>
+                <AuthNav />
             </nav>
         </header>
     );
