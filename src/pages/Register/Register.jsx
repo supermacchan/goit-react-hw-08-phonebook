@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { authOperations } from 'redux/auth/authOperations';
-
+import { selectIsLoggedIn } from 'redux/auth/authSelectors';
+import { LoginSuccess } from 'components/LoginSuccess/LoginSuccess';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { HiOutlineMail } from 'react-icons/hi';
 import { RiLockPasswordLine } from 'react-icons/ri';
@@ -13,6 +14,7 @@ const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const isLoggedIn = useSelector(selectIsLoggedIn);
 
     const handleChange = event => {
         const { name, value } = event.currentTarget;
@@ -42,6 +44,7 @@ const Register = () => {
 
     return (
         <section className={css.registration}>
+            {isLoggedIn ? <LoginSuccess /> : <>
             <h2 className={css.title}>Fill out the following form to register</h2>
             <form className={css.registrationForm} onSubmit={handleSubmit}>
                 <ul className={css.list}>
@@ -99,6 +102,7 @@ const Register = () => {
                 </ul>
                 <button type='submit' className={css.submitBtn}>Register</button>
             </form>
+            </>}
         </section>
     )
 };
