@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { BsFillJournalBookmarkFill } from 'react-icons/bs';
-import css from "./AppBar.module.css";
+import css from "./Navigation.module.css";
 
-export const AppBar = () => {
+export const Navigation = () => {
     return (
         <header className={css.header}>
             <nav className={css.header__nav}>
