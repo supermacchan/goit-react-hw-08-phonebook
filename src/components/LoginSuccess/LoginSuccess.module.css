@@ -4,3 +4,16 @@
     color: var(--background-white);
     text-shadow: 1px 1px 1px rgb(51, 24, 124);
 }
+
+.notification {
+    text-align: center;
+    font-size: 26px;
+    color: var(--background-white);
+    text-shadow: 1px 1px 1px rgb(51, 24, 124);
+}
+
+.link {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--background-white);
+}
