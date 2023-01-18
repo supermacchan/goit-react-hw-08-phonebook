@@ -48,8 +48,8 @@ const Register = () => {
                             <RiLockPasswordLine className={css.icon} /> Password
                         </label>
                         <input
-                            type="text"
-                            name="email"
+                            type="password"
+                            name="password"
                             // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                             // title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                             id="passwordInputId"
