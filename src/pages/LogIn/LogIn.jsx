@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsLoggedIn } from 'redux/auth/authSelectors';
 import { authOperations } from 'redux/auth/authOperations';
-
+import { LoginSuccess } from 'components/LoginSuccess/LoginSuccess';
 import { HiOutlineMail } from 'react-icons/hi';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import css from './LogIn.module.css';
@@ -10,6 +11,7 @@ const LogIn = () => {
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const isLoggedIn = useSelector(selectIsLoggedIn);
 
     const handleChange = event => {
         const { name, value } = event.currentTarget;
@@ -36,6 +38,7 @@ const LogIn = () => {
 
     return (
         <section className={css.login}>
+            {isLoggedIn ? <LoginSuccess /> : <>
             <h2 className={css.title}>Sign in below</h2>
             <form className={css.logInForm} onSubmit={handleSubmit}>
                 <ul className={css.list}>
@@ -76,6 +79,7 @@ const LogIn = () => {
                 </ul>
                 <button type='submit' className={css.submitBtn}>Sign In</button>
             </form>
+            </>}
         </section>
     )
 };

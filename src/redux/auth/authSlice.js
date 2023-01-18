@@ -10,6 +10,8 @@ const initialState = {
     isLoggedIn: false,
 };
 
+// добавить тосты-уведомления про успешный логин, регистрацию, логаут, ошибки
+
 const authSlice = createSlice({
     name: "auth",
     initialState,
