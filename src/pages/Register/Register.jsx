@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 // import { authOperations } from 'redux/auth/authOperations';
 
 import { BsFillPersonFill } from 'react-icons/bs';
@@ -9,7 +9,7 @@ import { RiLockPasswordLine } from 'react-icons/ri';
 import css from './Register.module.css';
 
 const Register = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
