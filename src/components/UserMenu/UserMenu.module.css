@@ -11,9 +11,10 @@
 }
 
 .logOutBtn {
-    width: 90px;
-    padding: 10px 15px;
+    width: 80px;
+    padding: 5px 10px;
     margin-left: 20px;
+    margin-bottom: -2px;
     background-color: var(--main-blue);
     color: var(--background-white);
     border: none;
