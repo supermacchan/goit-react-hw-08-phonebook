@@ -13,10 +13,6 @@
     gap: 15px;
 }
 
-.header__icon {
-    margin-right: 10px;
-}
-
 .header__link {
     display: flex;
     align-items: center;
