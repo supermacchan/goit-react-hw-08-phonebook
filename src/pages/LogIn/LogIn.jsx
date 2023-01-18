@@ -23,10 +23,21 @@ const LogIn = () => {
         }
     };
 
+    const handleSubmit = event => {
+        event.preventDefault();
+        dispatch(authOperations.logIn({ email, password }));
+        reset();
+    };
+
+    const reset = () => {
+        setEmail('');
+        setPassword('');
+    };
+
     return (
         <section className={css.login}>
             <h2 className={css.title}>Sign in below</h2>
-            <form className={css.logInForm}>
+            <form className={css.logInForm} onSubmit={handleSubmit}>
                 <ul className={css.list}>
                     <li className={css.listItem}>
                         <label
