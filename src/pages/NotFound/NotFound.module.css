@@ -5,16 +5,16 @@
     text-shadow: 1px 1px 1px rgb(51, 24, 124);
 }
 
-.notification {
+.description {
+    margin-left: 20px;
     text-align: center;
-    font-size: 26px;
+    font-size: 25px;
     color: var(--background-white);
-    text-shadow: 1px 1px 1px rgb(51, 24, 124);
 }
 
 .link {
-    font-weight: 700;
     color: var(--background-white);
+    text-shadow: 1px 1px 1px rgb(51, 24, 124);
 }
 
 .link:hover,

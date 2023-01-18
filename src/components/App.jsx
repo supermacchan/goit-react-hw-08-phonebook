@@ -10,6 +10,7 @@ const Home = lazy(() => import('../pages/Home/Home'));
 const Contacts = lazy(() => import('../pages/Contacts/Contacts'));
 const Register = lazy(() => import('../pages/Register/Register'));
 const LogIn = lazy(() => import('../pages/LogIn/LogIn'));
+const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
 export const App = () => {
   return (
@@ -20,7 +21,7 @@ export const App = () => {
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<LogIn />} />
             <Route path='/contacts' element={<Contacts />} />
-            {/* добавить 404 */}
+            <Route path="*" element={<NotFound />} />
           </Route>
       </Routes>
 
