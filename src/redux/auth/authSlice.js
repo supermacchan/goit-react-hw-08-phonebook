@@ -20,16 +20,13 @@ const authSlice = createSlice({
             state.isLoggedIn = true;
         },
         [authOperations.register.pending](state, action) {
-            return state;
+
         },
         [authOperations.register.rejected](state, action) {
-            console.log(action);
-            console.log(state);
+            
         },
 
         [authOperations.logIn.fulfilled](state, action) {
-            console.log(state);
-            console.log(action.payload);
             state.user = action.payload.user;
             state.token = action.payload.token;
             state.isLoggedIn = true;
@@ -38,8 +35,7 @@ const authSlice = createSlice({
             
         },
         [authOperations.logIn.rejected](state, action) {
-            console.log(action);
-            console.log(state);
+            
         },
 
         [authOperations.logOut.fulfilled](state, action) {
