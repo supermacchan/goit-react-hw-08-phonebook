@@ -1,3 +1,7 @@
+import { BsFillPersonFill } from 'react-icons/bs';
+import { HiOutlineMail } from 'react-icons/hi';
+import { RiLockPasswordLine } from 'react-icons/ri';
+
 import css from './Register.module.css';
 
 const Register = () => {
@@ -11,7 +15,7 @@ const Register = () => {
                             htmlFor="nameInputId"
                             className={css.label}
                         >
-                            Name
+                           <BsFillPersonFill className={css.icon} /> Name
                         </label>
                         <input
                             type="text"
@@ -26,7 +30,7 @@ const Register = () => {
                             htmlFor="emailInputId"
                             className={css.label}
                         >
-                            Email
+                            <HiOutlineMail className={css.icon} /> Email
                         </label>
                         <input
                             type="email"
@@ -41,7 +45,7 @@ const Register = () => {
                             htmlFor="passwordInputId"
                             className={css.label}
                         >
-                            Password
+                            <RiLockPasswordLine className={css.icon} /> Password
                         </label>
                         <input
                             type="text"

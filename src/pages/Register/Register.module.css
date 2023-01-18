@@ -45,8 +45,13 @@
     font-weight: 500;
 }
 
+.icon {
+    margin-bottom: -3px;
+    margin-right: 3px;
+}
+
 .input {
-    width: 285px;
+    width: 265px;
     margin-bottom: 15px;
     padding: 4px;
     border: 0.3px solid rgba(1, 10, 64, 0.58);
@@ -62,7 +67,7 @@
 .submitBtn {
     width: 125px;
     padding: 10px 15px;
-    margin-top: 30px;
+    margin-top: 15px;
     background-color: var(--main-blue);
     color: var(--background-white);
     border: none;
