@@ -23,10 +23,10 @@ const authSlice = createSlice({
             state.isLoggedIn = true;
         },
         [authOperations.register.pending](state, action) {
-
+            return state;
         },
         [authOperations.register.rejected](state, action) {
-            
+            console.log(action.error.message);
         },
 
         [authOperations.logIn.fulfilled](state, action) {
@@ -38,7 +38,7 @@ const authSlice = createSlice({
             
         },
         [authOperations.logIn.rejected](state, action) {
-            
+            console.log(action.error.message);
         },
 
         [authOperations.logOut.fulfilled](state, action) {
@@ -50,7 +50,7 @@ const authSlice = createSlice({
             
         },
         [authOperations.logOut.rejected](state, action) {
-            
+            console.log(action.error.message);
         },
 
         [authOperations.refreshCurrentUser.fulfilled](state, action) {
