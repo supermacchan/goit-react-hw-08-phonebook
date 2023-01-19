@@ -8,6 +8,7 @@ const initialState = {
     },
     token: null,
     isLoggedIn: false,
+    isRefreshing: false
 };
 
 // добавить тосты-уведомления про успешный логин, регистрацию, логаут, ошибки
@@ -55,12 +56,13 @@ const authSlice = createSlice({
         [authOperations.refreshCurrentUser.fulfilled](state, action) {
             state.user = action.payload;
             state.isLoggedIn = true;
+            state.isRefreshing = false;
         },
         [authOperations.refreshCurrentUser.pending](state, action) {
-            
+            state.isRefreshing = true;
         },
         [authOperations.refreshCurrentUser.rejected](state, action) {
-            
+            state.isRefreshing = false;
         },
     },
 });
