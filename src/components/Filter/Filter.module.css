@@ -1,6 +1,6 @@
 .filterInput {
     display: flex;
-    width: 275px;
+    width: calc(100% - 50px);
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 25px;
