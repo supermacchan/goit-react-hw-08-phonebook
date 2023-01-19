@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { authOperations } from './authOperations';
+import { toast } from "react-toastify";
 
 const initialState = {
     user: {
@@ -21,24 +22,32 @@ const authSlice = createSlice({
             state.user = action.payload.user;
             state.token = action.payload.token;
             state.isLoggedIn = true;
+            toast.success(`Welcome, ${state.user.name}!`);
         },
         [authOperations.register.pending](state, action) {
             return state;
         },
         [authOperations.register.rejected](state, action) {
             console.log(action.error.message);
+            if (action.error.message === "Rejected") {
+                toast.error('Registration error: please check the entered data and try again.');
+            }
         },
 
         [authOperations.logIn.fulfilled](state, action) {
             state.user = action.payload.user;
             state.token = action.payload.token;
             state.isLoggedIn = true;
+            toast.success(`Welcome back, ${state.user.name}!`);
         },
         [authOperations.logIn.pending](state, action) {
             return state;
         },
         [authOperations.logIn.rejected](state, action) {
             console.log(action.error.message);
+            if (action.error.message === "Rejected") {
+                toast.error('Authorization error: incorrect email or password.');
+            }
         },
 
         [authOperations.logOut.fulfilled](state, action) {
