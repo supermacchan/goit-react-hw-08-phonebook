@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { selectIsLoggedIn } from "redux/auth/authSelectors";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 export const PrivateRoute = ({ 
     component: Component, 
@@ -15,7 +15,7 @@ export const PrivateRoute = ({
     );
 };
 
-// PrivateRoute.propTypes = {
-//     redirectTo: PropTypes.string.isRequired,
-//     component: ??? func?
-// }
+PrivateRoute.propTypes = {
+    redirectTo: PropTypes.string.isRequired,
+    component: PropTypes.object.isRequired,
+}

@@ -27,40 +27,18 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
 
-            <PublicRoute path='/register' restricted>
-              <Register />
-            </PublicRoute>
-
-            <PublicRoute path='/login' restricted>
-              <LogIn />
-            </PublicRoute>
-
-            {/* <PrivateRoute path="/contacts">     
-              <Contacts />
-            </PrivateRoute> */}
+            <Route path="/register" element={
+            <PublicRoute component={Register} redirectTo="/contacts"/>} />
+            
+            <Route path="/login" element={
+            <PublicRoute component={LogIn} redirectTo="/contacts"/>} />
 
             <Route path="/contacts" element={
             <PrivateRoute component={Contacts} redirectTo="/login" />} />
 
-            {/* <Route path='/register' element={<Register />} />
-            <Route path='/login' element={<LogIn />} />
-            <Route path='/contacts' element={<Contacts />} /> */}
-
             <Route path="*" element={<NotFound />} />
           </Route>
       </Routes>
-
-      {/* <PublicRoute path='/register' restricted>
-        <Register />
-      </PublicRoute>
-
-      <PublicRoute path='/login' restricted>
-        <Register />
-      </PublicRoute>
-
-      <PrivateRoute path="/contacts">     
-        <Contacts />
-      </PrivateRoute> */}
 
       <ToastContainer
         position="top-right"
