@@ -3,7 +3,7 @@ import { Route, Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { selectIsLoggedIn } from "redux/auth/authSelectors";
 
-export default function PrivateRoute({ children, ...routeProps }) {
+export const PrivateRoute = ({ children, ...routeProps }) => {
     const isLoggedIn = useSelector(selectIsLoggedIn);
 
     return (

@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/authOperations';
 import { Layout } from './Layout';
-import PrivateRoute from './PrivateRoute';
-import PublicRoute from './PublicRoute';
+import { PrivateRoute } from './PrivateRoute';
+import { PublicRoute } from './PublicRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -26,20 +26,38 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-            <Route path='/register' element={<Register />} />
+
+            <PublicRoute path='/register' restricted>
+              <Register />
+            </PublicRoute>
+
+            <PublicRoute path='/login' restricted>
+              <LogIn />
+            </PublicRoute>
+
+            <PrivateRoute path="/contacts">     
+              <Contacts />
+            </PrivateRoute>
+
+            {/* <Route path='/register' element={<Register />} />
             <Route path='/login' element={<LogIn />} />
-            <Route path='/contacts' element={<Contacts />} />
+            <Route path='/contacts' element={<Contacts />} /> */}
+            
             <Route path="*" element={<NotFound />} />
           </Route>
       </Routes>
 
-      <PublicRoute path='/register' restricted>
+      {/* <PublicRoute path='/register' restricted>
+        <Register />
+      </PublicRoute>
+
+      <PublicRoute path='/login' restricted>
         <Register />
       </PublicRoute>
 
       <PrivateRoute path="/contacts">     
         <Contacts />
-      </PrivateRoute>
+      </PrivateRoute> */}
 
       <ToastContainer
         position="top-right"
