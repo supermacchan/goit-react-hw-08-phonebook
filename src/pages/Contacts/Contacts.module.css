@@ -2,19 +2,12 @@
     padding: 20px;
     display: flex;
     align-items: flex-start;
-    /* justify-content: space-between; */
 }
 
-.phonebook__title {
+.title {
+    margin-top: 10px;
     text-align: center;
-    font-size: 35px;
-    color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 1px rgb(51, 24, 124);
-}
-
-.contacts__title {
-    text-align: center;
-    font-size: 33px;
+    font-size: 32px;
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px 1px rgb(51, 24, 124);
 }

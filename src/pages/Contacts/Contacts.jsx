@@ -13,11 +13,9 @@ const Contacts = () => {
         <section className={css.phonebook}>
             {isLoggedIn ? 
             <>
-                {/* <h1 className={css.phonebook__title}>Phonebook</h1> */}
                 <ContactForm />
-
-                {/* <h2 className={css.contacts__title}>Contacts</h2> */}
                 <div className={css.contactList}>
+                    <h2 className={css.title}>Your Contacts</h2>
                     <Filter />
                     <ContactList />
                 </div>
