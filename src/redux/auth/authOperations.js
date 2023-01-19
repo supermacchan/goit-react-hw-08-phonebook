@@ -21,7 +21,7 @@ const register = createAsyncThunk(
             return data;
         } catch (error) {
             console.log(error);
-            // добавить обработку ошибки
+            // добавить обработку ошибки 
         }
     }
 );
