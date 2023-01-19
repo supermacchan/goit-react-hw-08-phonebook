@@ -2,10 +2,10 @@ import { lazy, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/authOperations';
+import { Layout } from './Layout';
+import PrivateRoute from './PrivateRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-import { Layout } from './Layout';
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const Contacts = lazy(() => import('../pages/Contacts/Contacts'));
@@ -19,7 +19,7 @@ export const App = () => {
   useEffect(() => {
     dispatch(authOperations.refreshCurrentUser());
   }, [dispatch]);
-  
+
   return (
     <>
       <Routes>
@@ -27,10 +27,15 @@ export const App = () => {
           <Route index element={<Home />} />
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<LogIn />} />
+            
             <Route path='/contacts' element={<Contacts />} />
             <Route path="*" element={<NotFound />} />
           </Route>
       </Routes>
+
+      <PrivateRoute path="/contacts">     
+        <Contacts />
+      </PrivateRoute>
 
       <ToastContainer
         position="top-right"
