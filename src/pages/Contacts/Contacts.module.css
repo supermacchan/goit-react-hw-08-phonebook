@@ -11,3 +11,7 @@
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px 1px rgb(51, 24, 124);
 }
+
+.contactList {
+    margin-left: 20px;
+}
