@@ -1,6 +1,7 @@
 import { lazy, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsRefreshing } from '../redux/auth/authSelectors';
 import { authOperations } from 'redux/auth/authOperations';
 import { Layout } from './Layout';
 import { PrivateRoute } from './PrivateRoute';
@@ -16,6 +17,7 @@ const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
 export const App = () => {
   const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     dispatch(authOperations.refreshCurrentUser());
@@ -23,6 +25,7 @@ export const App = () => {
 
   return (
     <>
+    {!isRefreshing &&
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -39,7 +42,7 @@ export const App = () => {
             <Route path="*" element={<NotFound />} />
           </Route>
       </Routes>
-
+    }
       <ToastContainer
         position="top-right"
         autoClose={3000}
