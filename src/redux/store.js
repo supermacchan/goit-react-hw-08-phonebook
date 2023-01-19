@@ -18,7 +18,7 @@ import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 const authPersistConfig = {
     key: 'auth',
     storage,
-    blacklist: ['token'],
+    whitelist: ['token'],
     stateReconciler: autoMergeLevel2,
 };
 
