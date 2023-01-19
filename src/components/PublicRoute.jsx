@@ -17,4 +17,4 @@ export const PublicRoute = ({
 PublicRoute.propTypes = {
     redirectTo: PropTypes.string.isRequired,
     component: PropTypes.object.isRequired,
-}
+};
