@@ -35,7 +35,7 @@ const authSlice = createSlice({
             state.isLoggedIn = true;
         },
         [authOperations.logIn.pending](state, action) {
-            
+            return state;
         },
         [authOperations.logIn.rejected](state, action) {
             console.log(action.error.message);
@@ -47,7 +47,7 @@ const authSlice = createSlice({
             state.isLoggedIn = false;
         },
         [authOperations.logOut.pending](state, action) {
-            
+            return state;
         },
         [authOperations.logOut.rejected](state, action) {
             console.log(action.error.message);
