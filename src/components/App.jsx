@@ -28,13 +28,12 @@ export const App = () => {
           <Route index element={<Home />} />
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<LogIn />} />
-            
             <Route path='/contacts' element={<Contacts />} />
             <Route path="*" element={<NotFound />} />
           </Route>
       </Routes>
 
-      <PublicRoute path='/' restricted>
+      <PublicRoute path='/register' restricted>
         <Register />
       </PublicRoute>
 
