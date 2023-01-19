@@ -51,6 +51,17 @@ const authSlice = createSlice({
         [authOperations.logOut.rejected](state, action) {
             
         },
+
+        [authOperations.refreshCurrentUser.fulfilled](state, action) {
+            state.user = action.payload;
+            state.isLoggedIn = true;
+        },
+        [authOperations.refreshCurrentUser.pending](state, action) {
+            
+        },
+        [authOperations.refreshCurrentUser.rejected](state, action) {
+            
+        },
     },
 });
 
