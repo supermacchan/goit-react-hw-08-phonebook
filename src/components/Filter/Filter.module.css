@@ -1,10 +1,10 @@
 .filterInput {
     display: flex;
-    width: calc(100% - 50px);
+    width: 390px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 25px;
-    padding: 4px;
+    padding: 6px;
     border: 0.3px solid rgba(1, 10, 64, 0.58);
     border-radius: 3px;
     background-color: rgb(220, 242, 255);
