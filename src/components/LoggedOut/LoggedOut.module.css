@@ -1,6 +1,7 @@
 .unauthorized {
     margin: auto;
-    padding-top: 45px;
+    padding-top: 40px;
+    text-align: center;
 }
 
 .title {
@@ -14,7 +15,7 @@
     margin-top: 18px;
     margin-bottom: 0;
     text-align: center;
-    font-size: 26px;
+    font-size: 24px;
     color: var(--background-white);
     text-shadow: 1px 1px 1px rgb(51, 24, 124);
 }
@@ -26,6 +27,21 @@
 
 .link:hover,
 .link:focus {
-    color: var(--active-button-text-color);
+    color: var(--active-blue);
+    text-shadow: 1px 1px 1px rgb(255, 255, 255, 0.4);
     text-decoration: none;
+}
+
+.image {
+    width: 380px;
+    margin-top: 20px;
+}
+
+.choice {
+    margin-top: 18px;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 22px;
+    color: var(--background-white);
+    text-shadow: 1px 1px 1px rgb(51, 24, 124);
 }

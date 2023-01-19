@@ -1,5 +1,6 @@
 .success {
     padding-top: 45px;
+    text-align: center;
 }
 
 .title {
@@ -25,4 +26,8 @@
 .link:focus {
     color: var(--active-button-text-color);
     text-decoration: none;
+}
+
+.image {
+    width: 600px;
 }

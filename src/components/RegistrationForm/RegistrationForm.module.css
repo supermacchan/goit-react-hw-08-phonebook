@@ -97,5 +97,6 @@
 .link:hover,
 .link:focus {
     color: var(--active-blue);
+    text-shadow: 1px 1px 1px rgb(255, 255, 255, 0.4);
     text-decoration: none;
 }

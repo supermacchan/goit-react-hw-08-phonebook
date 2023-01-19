@@ -12,6 +12,11 @@ export const LoginSuccess = () => {
             <p className={css.notification}>
                 You can now go to your <Link to={"/contacts"} className={css.link}>Contact list</Link>.
             </p>
+            <img 
+                src={require('../../images/welcome.png')} 
+                alt="welcome" 
+                className={css.image}
+            />
         </div>
     )
 }
