@@ -61,17 +61,17 @@ const refreshCurrentUser = createAsyncThunk(
 
         if (persistedToken === null) {
             return;
-        }
+        } else {
+            token.set(persistedToken);
 
-        token.set(persistedToken);
-
-        try {
-            const { data } = await axios.get('/users/current');
-            return data;
-        } catch (error) {
-            console.log(error);
-            // добавить обработку ошибки
-        }
+            try {
+                const { data } = await axios.get('/users/current');
+                return data;
+            } catch (error) {
+                console.log(error);
+                // добавить обработку ошибки
+            }
+        }  
     }
 )
 
