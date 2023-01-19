@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/authOperations';
 import { HiOutlineMail } from 'react-icons/hi';
@@ -75,6 +76,7 @@ export const LogInForm = () => {
                 </ul>
                 <button type='submit' className={css.submitBtn}>Sign In</button>
             </form>
+            <h3 className={css.notice}>Don't have an account yet? <Link to={"/register"} className={css.link}>Sign up here!</Link></h3>
         </>
     );
 }

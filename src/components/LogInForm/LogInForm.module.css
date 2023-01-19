@@ -81,3 +81,21 @@
     color: var(--active-button-text-color);
     box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
 }
+
+.notice {
+    text-align: center;
+    font-size: 20px;
+    color: var(--background-white);
+    text-shadow: 1px 1px 1px rgb(51, 24, 124);
+}
+
+.link {
+    font-weight: 700;
+    color: var(--background-white);
+}
+
+.link:hover,
+.link:focus {
+    color: var(--active-blue);
+    text-decoration: none;
+}

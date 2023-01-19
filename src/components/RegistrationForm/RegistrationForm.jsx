@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/authOperations';
 import { BsFillPersonFill } from 'react-icons/bs';
@@ -98,6 +99,7 @@ export const RegistrationForm = () => {
                 </ul>
                 <button type='submit' className={css.submitBtn}>Register</button>
             </form>
+            <h3 className={css.notice}>Already have an account? <Link to={"/login"} className={css.link}>Log in here!</Link></h3>
         </>
     )
 };
