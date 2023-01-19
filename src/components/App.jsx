@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/authOperations';
 import { Layout } from './Layout';
 import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -32,6 +33,10 @@ export const App = () => {
             <Route path="*" element={<NotFound />} />
           </Route>
       </Routes>
+
+      <PublicRoute path='/' restricted>
+        <Register />
+      </PublicRoute>
 
       <PrivateRoute path="/contacts">     
         <Contacts />
