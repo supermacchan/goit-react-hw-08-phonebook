@@ -10,18 +10,20 @@ const Contacts = () => {
     const isLoggedIn = useSelector(selectIsLoggedIn);
 
     return (
-        <>
+        <section className={css.phonebook}>
             {isLoggedIn ? 
             <>
-                <h1 className={css.phonebook__title}>Phonebook</h1>
+                {/* <h1 className={css.phonebook__title}>Phonebook</h1> */}
                 <ContactForm />
 
-                <h2 className={css.contacts__title}>Contacts</h2>
-                <Filter />
-                <ContactList />
+                {/* <h2 className={css.contacts__title}>Contacts</h2> */}
+                <div className={css.contactList}>
+                    <Filter />
+                    <ContactList />
+                </div>
             </>
             : <LoggedOut />}
-        </>
+        </section>
     )
 };
 

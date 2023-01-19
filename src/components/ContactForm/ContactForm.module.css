@@ -4,9 +4,8 @@
     align-items: center;
 
     width: 300px;
+    height: calc(100vh - 175px);
     padding: 30px 20px;
-    margin-left: auto;
-    margin-right: auto;
     border: 1px solid black;
     border-radius: 5px;
     background-color: var(--background-white);

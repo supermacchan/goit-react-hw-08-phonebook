@@ -18,6 +18,7 @@ export const Filter = () => {
                     value={filter}
                     onChange={changeFilter}
                     className={css.filterInput}
+                    placeholder='Filter by name'
             />
         </label>
     );
