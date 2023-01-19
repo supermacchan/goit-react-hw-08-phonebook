@@ -19,6 +19,7 @@
 .contacts__delBtn {
     width: 100px;
     padding: 5px 10px;
+    margin-left: 10px;
     background-color: #001ead;
     color: white;
     border: none;
