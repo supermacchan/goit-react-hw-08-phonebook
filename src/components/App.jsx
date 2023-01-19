@@ -35,14 +35,17 @@ export const App = () => {
               <LogIn />
             </PublicRoute>
 
-            <PrivateRoute path="/contacts">     
+            {/* <PrivateRoute path="/contacts">     
               <Contacts />
-            </PrivateRoute>
+            </PrivateRoute> */}
+
+            <Route path="/contacts" element={
+            <PrivateRoute component={Contacts} redirectTo="/login" />} />
 
             {/* <Route path='/register' element={<Register />} />
             <Route path='/login' element={<LogIn />} />
             <Route path='/contacts' element={<Contacts />} /> */}
-            
+
             <Route path="*" element={<NotFound />} />
           </Route>
       </Routes>
