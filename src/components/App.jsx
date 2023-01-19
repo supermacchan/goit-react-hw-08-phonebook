@@ -1,6 +1,7 @@
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-
+import { useDispatch } from 'react-redux';
+import { authOperations } from 'redux/auth/authOperations';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -13,6 +14,12 @@ const LogIn = lazy(() => import('../pages/LogIn/LogIn'));
 const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.refreshCurrentUser());
+  }, [dispatch]);
+  
   return (
     <>
       <Routes>

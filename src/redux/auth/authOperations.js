@@ -53,8 +53,20 @@ const logOut = createAsyncThunk(
     }
 );
 
+const refreshCurrentUser = createAsyncThunk(
+    "auth/refresh",
+    async (_, thunkAPI) => {
+        try {
+            console.log(thunkAPI.getState());
+        } catch (error) {
+            
+        }
+    }
+)
+
 export const authOperations = {
     register,
     logIn,
-    logOut
+    logOut,
+    refreshCurrentUser
 }
